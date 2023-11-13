@@ -1,9 +1,10 @@
+import { lemonWord } from "../images";
 
 function Nav()
 {
     return(
         <nav className="navlings">
-            <img alt="little-Lemon-icon" src="./lemon.jpg"/>
+            <img alt="little-Lemon-icon" width="150"  src={lemonWord}/>
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./about.html">About</a></li>
