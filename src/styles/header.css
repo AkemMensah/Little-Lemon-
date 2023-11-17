@@ -7,10 +7,25 @@
 
   }
 
+  @keyframes app-logo-pump{
+    0%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1.2);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+
   .app-logo{
     margin-left: 10px;
     pointer-events: none;
     border-radius: 1.5rem;
+    margin-bottom: 20px;
+    margin-left: 1rem;
+    animation: app-logo-pump infinite 2s linear;
     /* color: green; */
     /* background-color: #123910c0; */
   }
@@ -22,6 +37,15 @@
     width: 100%;
   }
 
+  @keyframes header-run{
+    0%{
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translateX(100%);
+    }
+  }
+
   .app-header p{
     /* color: white; */
     background-color: white;
@@ -29,6 +53,7 @@
     font-weight: bold;
     margin-left: 10px;
     border-radius: 1.5rem;
+    animation: header-run 15s ease-in-out infinite;
   }
 
   .navlinks ul{
@@ -45,4 +70,33 @@
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  .navlinks ul li a:hover{
+    color: #123910c0;
+  }
+
+  .navlinks input[type=search]{
+    width: 20%;
+    /* height: 2rem; */
+    border-radius: 1rem 0 0 1rem;
+    border: solid 0.3rem #000b072c;
+    padding: 0.5rem;
+    font-size:19px;
+    margin-bottom: 1rem;
+  }
+
+  .navlinks button{
+    border-radius: 0 1rem 1rem 0;
+    border: solid 0.3rem #000b072c;
+    padding: 0.5rem;
+    font-size:19px;
+    margin-bottom: 1rem;
+    margin-left: -5rem;
+    color: black;
+    font-weight: 900;
+  }
+  .navlinks button:hover{
+    background-color: #123910c0;
+    color: white;
   }

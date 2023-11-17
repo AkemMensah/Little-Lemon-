@@ -4,7 +4,15 @@ import headerStyles from "../styles/header.css";
 function Nav() {
   return (
     <nav className="navlinks">
-      <img alt="little-Lemon" className="app-logo" width="150" src={lemonWord} />
+      <img
+        alt="little-Lemon"
+        className="app-logo"
+        width="150"
+        src={lemonWord}
+      />
+      <input type="search" placeholder="Search item..." />
+      <button>Search</button>
+
       <ul>
         <li>
           <a href="./index.html">Home</a>
@@ -29,7 +37,7 @@ function Nav() {
 function Heading() {
   return (
     <div className="app-header">
-      <p style={{color:"green"}}>Welcome to Little Lmon Restaurant!</p>
+      <p style={{ color: "green" }}>Welcome to Little Lemon Restaurant!</p>
       <Nav />
     </div>
   );

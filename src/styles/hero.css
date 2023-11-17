@@ -1,31 +1,99 @@
+
 .hero{
-    min-height: 50vh;
-    display: flex ;
-    flex-direction: row;
-    /* align-items: center; */
-    justify-content: center;
-    background-color: #495E57;
+    height: 70vh;
+    background-color: #123910c0;
     color: white;
+    position:relative;
+    margin-bottom:0;
+    padding-bottom: 0;
+    border-radius: 0.5rem;
+}
+
+.text-image {
+    width: 100%;
+    min-height: 40vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    border-radius: 2rem;
 }
 
 .hero .hero-text{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    width: 60%;
-    border: solid 1px white;
-    /* background-color: green; */
+    height: 40%;
+    border: solid 5px white;
+    border-radius: 2rem;
+    background-color: #495E57;
+    color: white;
+    font-size: 1rem;
 }
 
-.hero .hero-image{
-    width: 40%;
-    min-height: 20vh;
-    /* background-color: red; */
+.hero .hero-text h1{
+    font-size: 2rem;
+    margin: 0 0 0 0.5rem;
 }
 
-.hero .hero-text img{
+.hero .hero-text h3{
+    font-size: 1rem;
+    margin:0 0 1rem 0.5rem;
+}
+
+
+.hero-text p {
+    position:relative;
+    font-size: 18px;
+    margin:0 0.5rem;
+    text-align: justify
+}
+
+.hero-text p button{
+    height: 3rem;
+    position: absolute;
+    bottom: -3rem;
+    left: 6rem;
+}
+.hero-text p button:hover{
+    background-color: #32cf2ac0;
+    color: white;
+    border: solid 0.5rem #000b072c;}
+
+.hero-image{
+    height: 40%;
+    background-color: red;
+    border: solid 5px white;
+    border-radius: 2rem;
+}
+
+.hero-image img{
     width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit: cover;
+    border-radius: 2rem;
 }
+
+.hero button{
+    /* width: 20%; */
+    height: 10%;
+    border-radius: 2rem;
+    border: solid 0.5rem #000b072c;
+    background-color: #123910c0;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* margin-top: 1rem; */
+    margin-left: 1rem;
+    cursor: pointer;
+    position:absolute;
+    bottom: 0.6rem;
+    left: 5rem;
+}
+.hero button:hover{
+    background-color: #32cf2ac0;
+    color: white;
+    border: solid 0.5rem #000b072c;
+}
+
+
+
+
