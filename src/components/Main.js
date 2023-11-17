@@ -1,13 +1,14 @@
 // import hero_cake from "../images/hero_cake.jpg";
 import * as images from "../images/index";
 import couples from "../images/couples.png";
+import heroStyle from "../styles/hero.css";
 
 
 function HeroSection() {
   return (
     <div className="hero">
       <div className="hero-text">
-        <h1>Little Lemon</h1>
+        <h1 style={{color:"#F4CE14"}}>Little Lemon</h1>
         <h3>CHICAGO</h3>
         <p>
           lorem ipsum dolor sit amet, consectetur adipiscing elit. nunc, quis
@@ -16,11 +17,11 @@ function HeroSection() {
           nisl. Sed euismod, nisl quis nisl nisl quis nisl. Sed euismod, nisl
           quis ultricies.
         </p>
+        <button>Reserve a Table</button>
       </div>
       <div className="hero-image">
-        <img alt="Hero dish" heigth="100" width="100" src={images.hero_cake} />
+        <img alt="Hero dish" height="150" width="300" src={images.hero_cake} />
       </div>
-      <button>Reserve a Table</button>
     </div>
   );
 }

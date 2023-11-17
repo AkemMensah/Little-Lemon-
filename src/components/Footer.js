@@ -6,14 +6,11 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-
-
-
 function Info() {
   return (
     <div className="footer">
       <div className="fLogo">
-        <img height="100" width="100" src={lemonWord} alt="lemon" />
+        <img width="150" src={lemonWord} alt="lemon" />
       </div>
       <div className="contact">
         <p>Little Lemon</p>
@@ -36,7 +33,6 @@ function Info() {
             <a href="./menu.html">Menu</a>
           </li>
           <li>
-            {" "}
             <a href="./orders.html">Order Online</a>
           </li>
           <li>
