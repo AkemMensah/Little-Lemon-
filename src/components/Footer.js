@@ -7,6 +7,14 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+const Data = {
+  address: "Little Lemon Restaurant",
+  address2: "P.O.Box C348",
+  address3: "Chicago, USA Lemon street",
+  tel: "+623-456-7890",
+  email: ""
+}
+
 function Info() {
   return (
     <div className="footer">
@@ -23,8 +31,8 @@ function Info() {
       </div>
 
       <div className="links">
+      <p>HyperLinks:</p>
         <ul>
-          <p>HyperLinks:</p>
           <li>
             <a href="./index.html">Home</a>
           </li>
@@ -44,8 +52,8 @@ function Info() {
       </div>
 
       <div className="social">
+        <p>Follow Us:</p>
         <ul>
-          <p>Follow Us:</p>
           <li>
             <a href="https://www.facebook.com/">
               <FontAwesomeIcon icon={faFacebook} />

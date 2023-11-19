@@ -57,9 +57,9 @@
     font: 1.5rem bold sans-serif;
     padding: 0 rem 0 0.2rem;
     position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: rgb(243, 246, 43);
+    bottom: -3rem;
+    right: 7rem;
+    /* background-color: rgb(243, 246, 43); */
     border-radius: 0.5rem;
 }
 
@@ -73,9 +73,7 @@
     font: 1.5rem bold sans-serif;
 }
 
-.links{
 
-}
 .links ul{
     list-style: none;
     display: flex;
@@ -124,4 +122,53 @@
     color: blue;
     /* background-color: blue; */
     font: 1.5rem bold sans-serif;
+}
+
+@media screen and (max-width:768px){
+    .footer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-top:1rem solid white;
+    }
+    .fLogo{
+        width: 70%;
+        height: 50%;
+        margin: 3rem 0 0 3rem;
+        padding: 0;
+    }
+    .fLogo img{
+        width: 80%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        height: 100%;
+    }
+    .links{
+        border-top:0.2rem solid black;
+    }
+    .social{
+        border-top:0.3rem solid black;
+    }
+    .links ul{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 0.2rem;
+        padding: 0;
+        margin: 0 0 0 0.2rem;
+    }
+    .links ul li{
+        font-size: 0.2rem;
+        padding: 0;
+        margin: 0.;
+        /* background-color: blueviolet; */
+    }
+    .social p{
+        font-size: 1.5rem;
+        margin-left: 2rem;
+    }
+    .social ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 0rem;
+    }
+
 }

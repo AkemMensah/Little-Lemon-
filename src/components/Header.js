@@ -1,15 +1,20 @@
 import { lemonWord } from "../images";
 import headerStyles from "../styles/header.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Nav() {
   return (
     <nav className="navlinks">
+      <div className="images">
       <img
         alt="little-Lemon"
         className="app-logo"
         width="150"
         src={lemonWord}
       />
+      <div className="bar"><FontAwesomeIcon icon={ faBars } /></div>
+      </div>
       <input type="search" placeholder="Search item..." />
       <button>Search</button>
 

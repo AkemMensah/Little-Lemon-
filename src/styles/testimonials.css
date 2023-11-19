@@ -10,7 +10,7 @@
 .tests{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+    gap: 2rem;
 }
 .testimonial{
     background-color: #3b4f40;
@@ -25,8 +25,6 @@
 .testimonial img{
     width: 60%;
     height: 40vh;
-    /* height: 20%; */
-    /* border-radius: 0.5rem; */
     border-radius: 50%;
 }
 
@@ -45,4 +43,14 @@
     width: 8rem;
     font: 1.5rem bold sans-serif;
     border-radius: 1rem;
+}
+
+@media screen and (max-width: 768px){
+    .testimonials{
+        margin-top: 2rem;
+    }
+    
+    .tests{
+        grid-template-columns: 1fr 1fr;
+    }
 }

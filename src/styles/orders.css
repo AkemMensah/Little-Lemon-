@@ -21,14 +21,15 @@
 
 .orders ul li{
     list-style: none;
-    font:1.7rem bold sans-serif;
-    margin: 0 1rem;
-    padding: 1rem;
+    font:1.7rem bolder sans-serif;
+    margin: 1rem 1rem;
+    padding: 1rem 0;
     background-color: aliceblue;
     border-radius: 1rem;
+    text-align: center;
 }
 
-.orders ul li a:hover{
+.orders ul li:hover{
     background-color: #32cf2ac0;
     color: white;
     border: solid 0.5rem #000b072c;
@@ -37,4 +38,24 @@
  a {
     text-decoration: none;
     color: black;
+}
+
+@media  screen and (max-width: 768px) {
+    .orders{
+         padding-bottom: 2rem;
+
+    }
+
+    .orders ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .orders ul li{
+        margin: 0.5rem;
+    }
+    .orders ul li:hover{
+        background-color: #32cf2ac0;
+        color: white;
+        border: solid 0.5rem #000b072c;
+    }
 }

@@ -66,4 +66,22 @@
     font: 1.5rem bold sans-serif;
     border: none;
 }
+
+@media screen and (max-width: 768px) {
+    
+    .articles {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        /* border-radius: 2rem; */
+    }
+
+    .special{
+        border: solid 3px  #123910c0;
+        margin: 0 0 0 0;
+        text-align: center;
+        font: 1rem bold sans-serif;
+        height: 70vh;
+    }
+}
     

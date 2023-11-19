@@ -73,3 +73,28 @@
     font-size: 1.5rem;
     margin:0 0 1rem 5rem;
 }
+
+@media screen and (max-width : 768px){
+    .about{
+        background-color: rgb(204, 227, 248);
+        border-radius:0.5rem 0.5rem 0 0;
+    }
+    .about-text{
+        overflow:hidden;
+        position:relative;
+
+    }
+    .about .about-text button{
+        position:absolute;
+        bottom:-5%;
+        right:0;
+        padding: -10rem;
+    }
+    .about .about-text button:hover{
+        background-color: rgb(153, 210, 55);
+        color: white;
+    }
+    .about .about-image p{
+        background-color:transparent;
+    }
+}
