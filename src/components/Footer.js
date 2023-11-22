@@ -7,13 +7,13 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-const Data = {
-  address: "Little Lemon Restaurant",
-  address2: "P.O.Box C348",
-  address3: "Chicago, USA Lemon street",
-  tel: "+623-456-7890",
-  email: ""
-}
+// const Data = {
+//   address: "Little Lemon Restaurant",
+//   address2: "P.O.Box C348",
+//   address3: "Chicago, USA Lemon street",
+//   tel: "+623-456-7890",
+//   email: ""
+// }
 
 function Info() {
   return (

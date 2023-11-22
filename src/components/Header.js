@@ -20,7 +20,7 @@ function Nav() {
 
       <ul>
         <li>
-          <a href="./index.html">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
           <a href="./about.html">About</a>

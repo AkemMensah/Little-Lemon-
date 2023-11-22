@@ -45,7 +45,9 @@ function HeroSection() {
           <img alt="Hero dish" src={images.hero_cake} />
         </div>
       </div>
-      <button className="tbtn">Reserve a Table</button>
+      <a href="/booking-form">
+        <button className="tbtn">Reserve a Table</button>
+      </a>
       <div className="search">
         <input type="search" placeholder="Search item..." />
         <button>Search</button>
@@ -79,7 +81,7 @@ function Orders() {
   );
 }
 
-function Highlights({articles,title,orderBtnLabel}) {
+function Highlights({ articles, title, orderBtnLabel }) {
   return (
     <>
       <div className="specials">
@@ -99,18 +101,16 @@ function Highlights({articles,title,orderBtnLabel}) {
             <button>Order A Delivery</button>
           </article> */}
           {articles.map((article) => (
-             <article className="special">
-             <div className="image">
-               <img alt="greek salad" src={article.image} />
-             </div>
-             <h5>
-               {article.title} <span>{article.price}</span>
-             </h5>
-             <p>
-                {article.description}
-             </p>
-             <button>{orderBtnLabel}</button>
-           </article>
+            <article className="special">
+              <div className="image">
+                <img alt="greek salad" src={article.image} />
+              </div>
+              <h5>
+                {article.title} <span>{article.price}</span>
+              </h5>
+              <p>{article.description}</p>
+              <button>{orderBtnLabel}</button>
+            </article>
           ))}
         </div>
       </div>
@@ -195,12 +195,16 @@ function Main() {
   // const articles = data.highlights.specials.articles;
   // const orderBtnLabel=data.highlights.specials.orderBtnLabel;
 
-  const {title,articles,orderBtnLabel}=data.highlights.specials;
+  const { title, articles, orderBtnLabel } = data.highlights.specials;
   return (
     <>
       <HeroSection />
       <Orders />
-      <Highlights title={title} articles= {articles} orderBtnLabel={orderBtnLabel}/>
+      <Highlights
+        title={title}
+        articles={articles}
+        orderBtnLabel={orderBtnLabel}
+      />
       <Testimonials />
       <About />
     </>

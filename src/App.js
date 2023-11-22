@@ -1,18 +1,30 @@
-// import logo from "./logo.svg";
+import logo from "./logo.svg";
 import "./App.css";
-import Heading from "./components/Header"
-import Main from "./components/MainBdy"
-import Footer from "./components/Footer"
+import Heading from "./components/Header";
+import Main from "./components/MainBdy";
+import Footer from "./components/Footer";
+import BookingPage from "./components/ReservationPage";
+import ConfirmBooking from "./components/ConfirmPage";
+import { Routes, Route } from "react-router-dom";
 
+function HomePage() {
+  return (
+    <>
+    <Heading />
+      <Main />
+      <Footer />
+    </>
+  );
+}
 
 function App() {
   return (
     <>
-    <Heading />
-
-    <Main/>
-
-    <Footer/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/booking-form" element={<BookingPage />} />
+        <Route path="/confirm-booking" element={<ConfirmBooking />} />
+      </Routes>
     </>
   );
 }
