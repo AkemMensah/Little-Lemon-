@@ -5,7 +5,7 @@ import Main from "./components/MainBdy";
 import Footer from "./components/Footer";
 import BookingPage from "./components/ReservationPage";
 import ConfirmBooking from "./components/ConfirmPage";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function HomePage() {
   return (

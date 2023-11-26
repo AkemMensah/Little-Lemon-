@@ -91,4 +91,5 @@
 .bye button:hover{
     background-color: #2e7821;
     color: white;
+    cursor: pointer;
 }

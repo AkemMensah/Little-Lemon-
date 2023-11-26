@@ -73,6 +73,7 @@
     font-size: 1.8rem;
     margin-top: 2rem;
     background-color: lightcyan;
+    cursor: pointer;
 }
 .form-other button:hover{
     background-color: lightskyblue;
