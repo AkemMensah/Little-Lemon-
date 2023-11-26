@@ -2,39 +2,38 @@ import { useState } from "react";
 import "../styles/booking.css";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
-// import { redirect } from "react-router-dom";
 
 function fetchAPI(date) {
-  return ["16:00", "17:00", "18:00", "19:00", "20:00", "21:00"];
+  return ["00:00","16:00", "17:00", "18:00", "19:00", "20:00", "21:00"];
 }
 function submitAPI(form) {
-  const data = {
-    name: "front",
-    price: 19.54,
-    description: "I am from the frontend",
+  // navigate("/confirm-booking");
+
+  // const data = {
+  //   name: "front",
+  //   price: 19.54,
+  //   description: "I am from the frontend"
   };
-  fetch("http://localhost:8000/menu/", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        return false;
-      } else {
-        return true;
-      }
-    })
-    .catch((error) => {
-      return false;
-    });
-}
+  // fetch("http://localhost:8000/menu/", {
+    // method: "POST",
+    // headers: { "Content-Type": "application/json" },
+    // body: JSON.stringify(data),
+  // })
+    // .then((response) => {
+      // if (!response.ok) {
+        // return false;
+      // } else {
+        // return true;
+      // }
+    // })
+    // .catch((error) => {
+      // return false;
+    // });
+// }
 function BookingForm({ form, setForm }) {
   const [availabilities, setAvailabilities] = useState([]);
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
-  // const history = useHistory();
 
   const placeholders = {
     name: "Enter name",
@@ -51,20 +50,21 @@ function BookingForm({ form, setForm }) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(form.email);
   };
-  // alert(form.date);
-  const isInValidForm = (form, setForm) => {
-    form = () => setForm({ ...form, form: form });
+   
+  // console.log(form)
+  const isInValidForm = (form) => {
+    // form = () => setForm({ ...form, form: form });
     // (e) => setForm({ ...form, special: e.target.value })
     // const res =
     if (
-      form.name === undefined ||
-      form.name.length > 3 ||
-      form.phone === undefined ||
-      form.date === undefined ||
-      form.time === undefined ||
-      form.guests === undefined ||
-      form.occasion === undefined ||
-      form.special === undefined ||
+      (form.name) === "" ||
+      (form.name.length) < 3 ||
+      (form.phone) === "" ||
+      (form.date) === "" ||
+      (form.time) === "" ||
+      (form.guests) === 1 ||
+      (form.occasion) === ""  ||
+      (form.special) === "" ||
       !isValidEmail()
     ) {
       // console.log(form.target)
@@ -73,9 +73,9 @@ function BookingForm({ form, setForm }) {
       return true;
     }
   };
-  console.log(form);
-
-  // alert(isInValidForm(form));
+  // console.log(form.name);
+  // console.log(form);
+  // console.log(isInValidForm)
 
   useEffect(() => {
     if (success) {
@@ -88,7 +88,9 @@ function BookingForm({ form, setForm }) {
   function submitForm(e) {
     e.preventDefault();
     // console.log(form);
-    setSuccess(submitAPI(form));
+    // setSuccess(submitAPI(form));
+    navigate("/confirm-booking");
+
     // redirect("/confirm-booking");
   }
 
@@ -128,6 +130,7 @@ function BookingForm({ form, setForm }) {
               placeholder={placeholders.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
               id="phone"
+              required
               //   value={form.phone}
             ></input>
           </div>
@@ -185,6 +188,7 @@ function BookingForm({ form, setForm }) {
               max="10"
               //   value={form.guests}
               placeholder={placeholders.guests}
+              onChange={(e) => setForm({...form, guests:e.target.value})}
             ></input>
           </div>
           <div className="form-item">
@@ -222,7 +226,7 @@ function BookingForm({ form, setForm }) {
             value="Make Reservation"
             // onClick={alert(isInValidForm(form))}
             // onClick={alert(isInValidForm)}
-            // disabled={!isInValidForm(form)}
+            // disabled={!isInValidForm()}
           >
             Make Reservation
           </button>
@@ -233,7 +237,16 @@ function BookingForm({ form, setForm }) {
 }
 
 function BookingPage() {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({
+    name: "Amal",
+    phone: "",
+    email: "",
+    date: "",
+    time: "",
+    guests: 1,
+    occasion: "",
+    special: "",
+  });
   return (
     <div className="booking-page">
       <BookingForm form={form} setForm={setForm} />
