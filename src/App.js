@@ -4,8 +4,11 @@ import Heading from "./components/Header";
 import Main from "./components/MainBdy";
 import Footer from "./components/Footer";
 import BookingPage from "./components/ReservationPage";
-import ConfirmBooking from "./components/ConfirmPage";
+import Orderform from "./components/MenuOrderPage";
+import ConfirmBooking from "./components/ComfirmbookingPage";
+import ComfirmOrder from "./components/ComfirmOrderPage";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+
 
 function HomePage() {
   return (
@@ -22,6 +25,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/order-form" element={<Orderform />} />
         <Route path="/booking-form" element={<BookingPage />} />
         <Route path="/confirm-booking" element={<ConfirmBooking />} />
       </Routes>

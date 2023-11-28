@@ -4,32 +4,29 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function fetchAPI(date) {
-  return ["00:00","16:00", "17:00", "18:00", "19:00", "20:00", "21:00"];
+  return ["00:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00"];
 }
-function submitAPI(form) {
-  // navigate("/confirm-booking");
 
-  // const data = {
-  //   name: "front",
-  //   price: 19.54,
-  //   description: "I am from the frontend"
-  };
-  // fetch("http://localhost:8000/menu/", {
-    // method: "POST",
-    // headers: { "Content-Type": "application/json" },
-    // body: JSON.stringify(data),
-  // })
-    // .then((response) => {
-      // if (!response.ok) {
-        // return false;
-      // } else {
-        // return true;
-      // }
-    // })
-    // .catch((error) => {
-      // return false;
-    // });
-// }
+function submitAPI(form) {
+  navigate("/confirm-booking");
+  
+fetch("http://localhost:8000/reservation/", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(form),
+})
+  .then((response) => {
+    if (!response.ok) {
+      return false;
+    } else {
+      return true;
+    }
+  })
+  .catch((error) => {
+    return false;
+  });
+}
+
 function BookingForm({ form, setForm }) {
   const [availabilities, setAvailabilities] = useState([]);
   const [success, setSuccess] = useState(false);
@@ -50,21 +47,21 @@ function BookingForm({ form, setForm }) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(form.email);
   };
-   
+
   // console.log(form)
   const isInValidForm = (form) => {
     // form = () => setForm({ ...form, form: form });
     // (e) => setForm({ ...form, special: e.target.value })
     // const res =
     if (
-      (form.name) === "" ||
-      (form.name.length) < 3 ||
-      (form.phone) === "" ||
-      (form.date) === "" ||
-      (form.time) === "" ||
-      (form.guests) === 1 ||
-      (form.occasion) === ""  ||
-      (form.special) === "" ||
+      form.name === "" ||
+      form.name.length < 3 ||
+      form.phone === "" ||
+      form.date === "" ||
+      form.time === "" ||
+      form.guests === 1 ||
+      form.occasion === "" ||
+      form.special === "" ||
       !isValidEmail()
     ) {
       // console.log(form.target)
@@ -87,6 +84,7 @@ function BookingForm({ form, setForm }) {
 
   function submitForm(e) {
     e.preventDefault();
+    submitAPI(form);
     // console.log(form);
     // setSuccess(submitAPI(form));
     navigate("/confirm-booking");
@@ -116,22 +114,20 @@ function BookingForm({ form, setForm }) {
               placeholder={placeholders.name}
               id="name"
               required
-              // className="form-item"
-              //   value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
             ></input>
           </div>
           <div className="form-item">
             <label htmlFor="phone">Phone:</label>
             <input
-              // className="form-item"
+             
               htmlFor="phone"
               type="tel"
               placeholder={placeholders.phone}
               onChange={(e) => setForm({ ...form, phone: e.target.value })}
               id="phone"
               required
-              //   value={form.phone}
+              
             ></input>
           </div>
           <div className="form-item">
@@ -163,7 +159,7 @@ function BookingForm({ form, setForm }) {
             <select
               id="res-time"
               name="res-time"
-              //   value={form.time}
+              
               onChange={(e) => setForm({ ...form, time: e.target.value })}
             >
               {availabilities.map((time) => (
@@ -180,15 +176,15 @@ function BookingForm({ form, setForm }) {
           <div className="form-item">
             <label htmlFor="guests">Number of guests:</label>
             <input
-              // className="form-item"
+             
               type="number"
               id="guests"
               name="guests"
               min="1"
               max="10"
-              //   value={form.guests}
+             
               placeholder={placeholders.guests}
-              onChange={(e) => setForm({...form, guests:e.target.value})}
+              onChange={(e) => setForm({ ...form, guests: e.target.value })}
             ></input>
           </div>
           <div className="form-item">
@@ -216,7 +212,7 @@ function BookingForm({ form, setForm }) {
               id="special"
               name="special"
               placeholder={placeholders.special}
-              // value={form.special}
+             
               onChange={(e) => setForm({ ...form, special: e.target.value })}
             ></textarea>
           </div>
@@ -224,8 +220,6 @@ function BookingForm({ form, setForm }) {
             className="form-item"
             type="submit"
             value="Make Reservation"
-            // onClick={alert(isInValidForm(form))}
-            // onClick={alert(isInValidForm)}
             // disabled={!isInValidForm()}
           >
             Make Reservation
